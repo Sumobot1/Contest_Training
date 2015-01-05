@@ -1,0 +1,15 @@
+9
+AB 5
+AD 5
+EA 6
+BC 4
+CD 2
+EC 2
+CF 4
+DF 6
+EF 1
+AC
+FB
+BD
+ED
+AF
