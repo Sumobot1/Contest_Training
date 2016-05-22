@@ -23,23 +23,15 @@ public static int nBest = 0, nDist, nClubs, arnClubs[];
     }
     public static int rec(int i, int nTotal, int nNum){      
         if (nBest==nDist){
-            //System.out.println(nNum);
             return nNum-1;
         }
-//        if (nBest>nDist){
-  //          return nNum-1;
-    //    }
         if (nTotal>nBest && nTotal<=nDist){
-            //System.out.println(nNum);
             nBest = nTotal;
         }
         if (i >= nClubs){
-           // System.out.println(nNum);
             return nNum;
         }
         rec(i+1, nTotal, nNum);
         return rec(i+1, nTotal+arnClubs[i], nNum+1);
-        
-       
     }
 }

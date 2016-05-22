@@ -10,7 +10,6 @@ public class Switch_BitSet {
         BitSet bits = new BitSet(); 
         Scanner fin = new Scanner (new FileReader("switch.txt"));
         nNum = fin.nextInt();
-        //arnLights = new int[nNum];
         for (int i = 0; i < nNum; i++) {
             if (fin.nextInt() == 1){            //GOING TO USE AN ARRAY, HOWEVER BITSET IS MORE EFFICIENT TO MY UNDERSTANDING...
                 bits.set(i, true);
@@ -26,8 +25,6 @@ public class Switch_BitSet {
             System.out.print(bits.get(j) +" ");
         }
         System.out.println(i);
-        
-        //rec(bits, i+1);
         bits.set(i, false);
         rec(bits, i+1);
         

@@ -13,21 +13,15 @@ public class Maze {
     public static void main(String[] args) throws IOException {
         Scanner fin = new Scanner(new FileReader("maze.txt"));
         nCases = fin.nextInt();
-        //System.out.println(nCases);
         for (int i = 0; i < nCases; i++) {
             nRows = fin.nextInt();
-            //System.out.println(nRows);
             nCols = fin.nextInt();
-            //System.out.println(nCols);
-            fin.nextLine();                             //Needed to have random fin.nextLine here or get indexoutofbounds exception 0... 
+            fin.nextLine();                           
             arcCity = new char[nRows][nCols];
             arnSeen = new int[nRows][nCols];
             for (int j = 0; j < nRows; j++) {
-//                for (int k = 0;k<nCols;k++){
                 arcCity[j] = fin.nextLine().toCharArray();
-//                }
             }
-            //print2D(arcCity);
             if (nRows == 1 && nCols == 1) {
                 System.out.println(1);
             } else {

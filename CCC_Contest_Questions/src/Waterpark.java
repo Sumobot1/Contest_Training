@@ -18,7 +18,6 @@ public static int nDest, nPaths;
             nEnd = fin.nextInt();
             arnMap.get(nStart).add(nEnd);
         }
-        //System.out.println(arnMap);
         rec(1);
         System.out.println(nPaths);
     }

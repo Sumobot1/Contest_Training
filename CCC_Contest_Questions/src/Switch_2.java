@@ -17,32 +17,6 @@ public class Switch_2 {
         for (int i = 0; i < nNum; i++) {
             sLights += fin.nextInt();
         }
-//        for (int j = 0;j<sLights.length();j++){
-//            if (sLights.length()-nTaken-1>=4){
-//                if (sLights.charAt(j) == '0')
-//                    nTaken+=1;
-//                else{
-//                    sPass+=sLights.charAt(j);
-//                }
-//                
-//            }
-//            else{
-//                sPass+=sLights.charAt(j);
-//            }
-//        }
-//        nTaken = 0;
-//        for (int j = sLights.length()-1;j>=0;j--){
-//            if (sLights.length()-nTaken-1>=4){
-//                if (sLights.charAt(j) == '0')
-//                    nTaken+=1;
-//                else{
-//                    sPass+=sLights.charAt(j);
-//                }
-//            }
-//            else{
-//                sPass+=sLights.charAt(j);
-//            }
-//        }
         rec(0, sPass, 0);
         System.out.println("nNum: " +nTurns);
     }
@@ -58,14 +32,12 @@ public class Switch_2 {
         System.out.println("Turn: " +nTurn);
         for (int j = 0;j<sLights.length();j++){            
             if (sLights.charAt(j) == '1'){   
-                //bCheck = false;
                 nNum = j;
                 nEnd = j;
                 int nStar = j;
                 while (nEnd<sLights.length() && sLights.charAt(nEnd)!='0'){
                     nEnd++;
-                }                                                                   //METHOD TO TURN ANY GROUPS OF 4 OR MORE 1S INTO 0S
-                //System.out.println("here" +nEnd);
+                }                                     
                 if (nEnd-nNum>=4){
                     while(nNum<nEnd){
                         sbLights.deleteCharAt(nNum);
@@ -86,38 +58,24 @@ public class Switch_2 {
             nTurns = nTurn;
             return;
         }
-        //sLights = sbLights.toString();
-        
-        //return;
-        //nTurns +=1;
         for (int i = nCurrent; i < sLights.length(); i++) {
             System.out.println(i);
             if (sLights.charAt(i) == '0') {
-               // sThing = sbLights.toString();             //TRIED DOING TWO RECURSIVE CALLS ON TOP OF EACH OTHER... DIDNT WORK IDK WHY
                 sbLights.deleteCharAt(i);
                 sbLights.insert(i, '1');
                 sOther = sbLights.toString();
                 System.out.println("sother: " +sOther);
-               // System.out.println("sThing: "+sThing);
-                
-               // rec(i+1, sThing, nTurn);              //NOT INCREMENTING I GIVES STACK OVERFLOW
-                rec(i, sOther, nTurn+1);                //GOING FROM OUTSIDE IN, CANNOT INCREMENT I
-                break;
-               // sLights[nCurrent] = 1;            //DONT FORGET THIS HAS TO BE A COPY - ARRAYS PASSED BY REFERENCE
-             //   System.out.println(nTurns);
-                
-               // System.out.println(sThing +" lol " +sOther +" " +nTurn);                        
+                rec(i, sOther, nTurn+1);                
+                break;                   
             }
             else if (sLights.charAt(sLights.length()-1-i) == '0'){
-                sbLights.deleteCharAt(sLights.length()-1-i);        //RANDOMLY WONDERED IF THIS WOULD WORK... IT DID
+                sbLights.deleteCharAt(sLights.length()-1-i);        
                 sbLights.insert(sLights.length()-1-i, '1');
                 sOther = sbLights.toString();
                 rec(i, sOther, nTurn+1);
-                break;                                  //NEEDED BREAKS OR IT WOULD NOT RETURN RIGHT NUMBER... WHY?
+                break;                                  
             }
         }
-     //   System.out.println("here" +nTurn);
-     //   return 9999;
     }
 }
 

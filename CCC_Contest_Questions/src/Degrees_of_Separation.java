@@ -13,26 +13,6 @@ public class Degrees_of_Separation {
         String sLine;
         int nFirst, nLast, nSecond;
         Scanner fin = new Scanner(new FileReader("Degrees.txt"));
-//        for (int i = 0;i<23;i++){
-        //          arl2D.add(new ArrayList<Integer>());
-        //    }
-        //arl2D.get(0) = Arrays.asList({6});
-//        int arn2[] = {6,4,5,15};
-//        int arn3[] = {3,6,5};
-//        int arn4[] = {4,6,3};
-//        int arn5[] = {1,2,3,4,5,7};
-//        int arn6[] = {6,8};
-//        int arn7[] = {7,9};
-//        int arn8[] = {8,10,12};                           //TRIED ADDING ARRAYS TO ARRAYLIST, DIDNT WORK
-//        int arn9[] = {9,11};                              //TRIED ADDING JUST VALUES TO ARRAYLIST, DIDNT WORK
-//        int arn10[] = {10,12};
-//        int arn11[] = {9,11,13};
-//        int arn12[] = {12,14,15};
-//        //int arn13[] = {13};
-//        int arn14[] = {3,13};
-//        int arn15[] = {17,18};
-//        int arn16[] = {16,18};
-//        int arn17[] = {16,17};
         arl2D.add(new ArrayList<Integer>(Arrays.asList(5)));
         arl2D.add(new ArrayList<Integer>(Arrays.asList(5)));
         arl2D.add(new ArrayList<Integer>(Arrays.asList(5, 3, 4, 14)));
@@ -51,15 +31,7 @@ public class Degrees_of_Separation {
         arl2D.add(new ArrayList<Integer>(Arrays.asList(16, 17)));
         arl2D.add(new ArrayList<Integer>(Arrays.asList(15, 17)));
         arl2D.add(new ArrayList<Integer>(Arrays.asList(15, 16)));
-//        for (int i = 0;i<arl2D.size();i++){
-//            for (int j = 0;j<arl2D.get(i).size();j++){
-//                System.out.print(arl2D.get(i).get(j) +" ");           //DEBUG CODE
-//            }
-//            System.out.println();
-//        }
-
         for (int i = 0; i < 6; i++) {
-            //break;
             sLine = fin.nextLine();
             if (sLine.equals("q")) {
                 break;
@@ -112,7 +84,6 @@ public class Degrees_of_Separation {
                 arl2D.get(nSecond).remove(i);
             }
         }
-        //arl2D.get(nSecond).remove(nFirst);        //NEED TO REMOVE ITEM AT INDEX, NOT SPECIFIC VALUE
     }
 
     public static void friends(int nPerson) {
@@ -154,7 +125,6 @@ public class Degrees_of_Separation {
                 for (int i = 0; i < arl2D.get(nNum).size(); i++) {
                     arlQueue2.add(arl2D.get(nNum).get(i));
                 }
-                //arlSeen.add(nNum);
             }
             if (arlQueue.isEmpty()){
                                 for (int i = 0; i < arlQueue2.size(); i++) {

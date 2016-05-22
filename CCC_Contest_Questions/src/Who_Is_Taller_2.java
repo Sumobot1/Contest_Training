@@ -36,28 +36,19 @@ public class Who_Is_Taller_2 {
         System.out.println(nTall +" " +nShort);
         int nCount;
         ArrayList<Integer> alHeights = new ArrayList<Integer>();
-    //    alHeights.add(arn2D[0][0]);
-        //  alHeights.add(arn2D[0][1]);
-        //arn2D[0][0] = 0;
-        //arn2D[0][1] = 0;
-        //print(alHeights);
         for (int i = 0; i < arn2D.length; i++) {
             alHeights.clear();
             nCount = 0;
             while (nCount<arn2D.length) {
-                if (arn2D[nCount][0] != 0 && arn2D[nCount][1] != 0) {
-                  //  System.out.println("derp");        
+                if (arn2D[nCount][0] != 0 && arn2D[nCount][1] != 0) {     
                     alHeights.add(arn2D[nCount][0]);
                     alHeights.add(arn2D[nCount][1]);
                     arn2D[nCount][0] = 0;
                     arn2D[nCount][1] = 0;
-                   // System.out.println("here");
                     break;
                 }
-                //print(alHeights);
                 nCount++;
             }
-           // System.out.println(nCount);
             for (int j = nCount; j < arn2D.length; j++) {
                 if (arn2D[i][0] == nTall && arn2D[j][1] == nShort) {
                     return 3;
@@ -95,7 +86,6 @@ public class Who_Is_Taller_2 {
                 }
             }
         }
-      //  print(alHeights);
 
         return 0;   //Could not find in array
     }

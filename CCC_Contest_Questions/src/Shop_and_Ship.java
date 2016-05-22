@@ -7,33 +7,26 @@ public class Shop_and_Ship {
 
     public static void main(String[] args) throws IOException{
         int nCities, nRoutes, nDist, nStart, nEnd, nPencils, arnPencils[][], nDest, nTot, nMin = Integer.MAX_VALUE;
-        //String sAlpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         Vertex arVertex[];
         Scanner fin = new Scanner (new FileReader("shop.txt"));
         nCities = fin.nextInt();
         nRoutes = fin.nextInt();
-        //System.out.println(nCities+" " +nRoutes);
         arVertex = new Vertex[nCities+1];
         for (int i = 0; i < nCities+1; i++) {
             arVertex[i] = new Vertex();
-            //System.out.println(arVertex[i]);
         }
         for (int i = 0;i<nRoutes;i++){
             nStart = fin.nextInt();
             nEnd = fin.nextInt();
             nDist = fin.nextInt();
-            //System.out.println("Start: " +nStart +" End: " +nEnd +" Dist: " +nDist);
             arVertex[nStart].adjacencies.add(new Edge(arVertex[nEnd], nDist));
             arVertex[nEnd].adjacencies.add(new Edge(arVertex[nStart], nDist));
         }
         nPencils = fin.nextInt();
-        //System.out.println(nPencils);
         arnPencils = new int[nPencils][2];
         for (int i = 0;i<nPencils;i++){
             arnPencils[i][0] = fin.nextInt();
-            arnPencils[i][1] = fin.nextInt();
-            //System.out.println(arnPencils[i][0] +" " +arnPencils[i][1]);
-            
+            arnPencils[i][1] = fin.nextInt();            
         }
         nDest = fin.nextInt();
         for (int i = 0;i<arnPencils.length;i++){
@@ -44,7 +37,6 @@ public class Shop_and_Ship {
             }
             computePaths(arVertex[arnPencils[i][0]]);
             nTot+= arVertex[nDest].minDistance;
-            //System.out.println(arVertex[nDest].minDistance);
             if (nTot<nMin){
                 nMin = nTot;
             }

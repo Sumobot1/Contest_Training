@@ -27,19 +27,9 @@ public class Who_Is_Taller_4 {
             nNum = 0;
             while (arn2DBig[(arn2D[j][1]) - 1][nNum] != 0 && nNum < arn2DBig[(arn2D[j][1]) - 1].length) {
                 nNum++;
-                //System.out.print(nNum +" ");
             }
-            //System.out.println("here" +j);
-            arn2DBig[(arn2D[j][1]) - 1][nNum] = arn2D[j][0];      //Take bigger number, add it onto the smaller line
+            arn2DBig[(arn2D[j][1]) - 1][nNum] = arn2D[j][0];      
         }
-        // System.out.println("here");
-//        for (int k = 0; k < arn2DBig.length; k++) {
-  //          System.out.print(k + "    ");
-    //        for (int l = 0; l < arn2DBig[k].length; l++) {
-      //          System.out.print(arn2DBig[k][l] + " ");
-        //    }
-          //  System.out.println();
-       // }
         bCheck1 = findtaller(arn2DBig, nP1, nP2);
         if (bCheck1) {
             System.out.println("yes");
@@ -53,17 +43,6 @@ public class Who_Is_Taller_4 {
                 System.out.println("unknown");
             }
         }
-
-//        System.out.println(sYN);
-        //       if (nYN == 0) {
-        //         System.out.println("unknown");
-        //   } else if (nYN == 1) {
-        //     System.out.println("no");
-        //     } else if (nYN == 2) {
-        //       System.out.println("equal");
-        // } else if (nYN == 3) {
-        //   System.out.println("yes");
-        // }
     }
 
     public static boolean findtaller(int arn2D[][], int nBig, int nSmall) {
@@ -71,13 +50,10 @@ public class Who_Is_Taller_4 {
         ArrayList<Integer> arlQueue = new ArrayList<Integer>();
         boolean arb2D[][] = new boolean[arn2D.length][arn2D.length];
         arlQueue.add(nSmall);
-        //System.out.println(nSmall);
         while (!arlQueue.isEmpty()) {
             nNum = arlQueue.get(0);
             arlQueue.remove(0);
-            //System.out.println(nNum);
             for (int i = 0; i < arn2D[nNum-1].length; i++) {
-               // System.out.println("here");
                 if (arn2D[nNum - 1][i] == nBig) {
                     return true;
                 } else if (arn2D[nNum-1][i] != nBig && arn2D[nNum-1][i] != 0){

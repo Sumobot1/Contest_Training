@@ -11,11 +11,8 @@ public class Cool_Numbers {
         long nSmall = fin.nextInt();
         long nBig = fin.nextInt();
         for (long i = nSmall;i<=nBig; i++){
-            //System.out.println(i);
             if (square(i)){
-                //System.out.println("ok");
                 if(cubed(i)){
-                    //System.out.println(i);
                     nCount ++;
                 }
             }
@@ -29,9 +26,7 @@ public class Cool_Numbers {
         return false;
     }
     public static boolean cubed(double lNum){
-        //System.out.println("dlakfjadkjf" +lNum);
         if (Math.cbrt(lNum) == (int)Math.cbrt(lNum)){
-            //System.out.println(Math.pow(lNum, (1/3)) +" " +(int)Math.pow(lNum, (1/3)));
             return true;
         }
         return false;

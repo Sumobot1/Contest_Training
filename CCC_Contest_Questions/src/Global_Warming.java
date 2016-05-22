@@ -18,7 +18,6 @@ public class Global_Warming {
             for (int i = 0;i<nNum;i++){
                 arnTemps[i] = fin.nextInt();
             }
-            //print(arnTemps);
             nLen = length(arnTemps);
             System.out.println(nLen);
         }
@@ -30,9 +29,7 @@ public class Global_Warming {
         for (int i = 0;i<arnTemps.length-1;i++){
             nDiff = arnTemps[i+1] - arnTemps[i];
             alDifs.add(nDiff);
-           // System.out.print(nDiff +" ");
         }
-     //   System.out.println();
         
         for (int i = 1;i<alDifs.size();i++){
             bCheck = checkit(alDifs, i);
@@ -50,18 +47,11 @@ public class Global_Warming {
         for (int i = 0;i<nLen;i++){
             arnDifs[i] = alDifs.get(i);
         }      
-        //print(arnDifs);
         while (nNum<alDifs.size()){
-          //  System.out.println("poop");
-            //System.out.println(nNum2);// + " " +alDifs.get(nNum) +" " +arnDifs[nNum2] +" " +nLen);
             if (nNum2 > nLen-1){
                 nNum2 = 0;
             }
             if (alDifs.get(nNum) != arnDifs[nNum2]){
-          //      System.out.println("Here");
-            //    if (nNum2 == nLen-1){
-              //      nNum2 = -1;
-                //}
                 return false;
                 
                 
