@@ -10,8 +10,7 @@ public static ArrayList<Integer> alNums = new ArrayList<Integer>(); //TURNED GLO
 public static boolean arbNums[];
 public static int nCombos = 0;
     public static void main(String[] args) throws IOException {
-        int nNum, k;
-       // boolean arbNums[];       
+        int nNum, k;     
         Scanner fin = new Scanner(new FileReader("Waring.txt"));
         for (int j = 0; j < 5; j++) {
             nCombos = 0;
@@ -45,8 +44,6 @@ public static int nCombos = 0;
         if (nCount == 2){
             if (arbNums[nHighPrime] == false){
                 nCombos++;
-                //nCount = 0;
-                //return;
             }
             return;
         }
@@ -57,20 +54,5 @@ public static int nCombos = 0;
         combo(nNum-nHighPrime, nCount+1, nPrime);
         combo(nNum, nCount+1, nPrime);
         combo(nNum-nHighPrime, nCount+1, nHighPrime);
-//        for (int i = 0; i < alNums.size(); i++) {
-//            for (int m = 0; m < alNums.size(); m++) {
-//                for (int l = 0; l < alNums.size(); l++) {
-//                    if (alNums.get(i) + alNums.get(l) + alNums.get(m) == nNum && alNums.get(i) >= alNums.get(m) && alNums.get(m) >= alNums.get(l)) {
-//                        //System.out.println(alNums.get(i) +" " +alNums.get(l) +" " +alNums.get(m));
-//                        nCombos += 1;
-//                    }
-//                }
-//            }
-//        }
-//        for (int i = 0; i < alNums.size(); i++) {
-//            System.out.print(alNums.get(i) + " ");
-//        }
-        //System.out.println("Combos " + nCombos);
-        //return;// nCombos;
     }
 }

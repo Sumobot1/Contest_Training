@@ -11,16 +11,13 @@ public static int nSpace, nFiles, arnFiles[], arn2D[][];
         for (int i = 0;i<5;i++){
             nSpace = fin.nextInt();
             nFiles = fin.nextInt();
-            //System.out.println(nSpace +" " +nFiles);
             arnFiles = new int[nFiles];
             for (int j = 0;j<nFiles;j++){
                 arnFiles[j] = fin.nextInt();
-                //System.out.println(arnFiles[j]);
             }
             arn2D = new int[nFiles+1][nSpace];
             best();
             nFin = arn2D[nFiles][nSpace-1];
-            //print2D(arn2D);
             System.out.println(nFin);
         }
     }
@@ -33,7 +30,7 @@ public static int nSpace, nFiles, arnFiles[], arn2D[][];
                 if (arnFiles[i-1]<=(j+1)){
                     nRem = (j+1)-arnFiles[i-1];
                     if (nRem>0){
-                        nTake = arnFiles[i-1]+arn2D[i - 1][nRem];           //nRem-1 worked for last program doesnt work now...
+                        nTake = arnFiles[i-1]+arn2D[i - 1][nRem];           
                         if (nLeave<nTake){
                             arn2D[i][j] = nTake;
                         }

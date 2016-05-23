@@ -24,30 +24,21 @@ public static int nRowEnd, nColEnd;
                         nRow = i;
                         nCol = k;
                     }
-//                    if (arsRoom[i][k].equals("B")){
-  //                      nRowEnd = i;
-    //                    nColEnd = k;
-      //              }
                 }
-                //arsRoom[i] = fin.nextLine().toCharArray();
             }
             nDist = dist(nRow, nCol);
             System.out.println(nDist);
-            //sDashes = fin.nextLine();
         }
         long etime = System.nanoTime();
         System.out.println(etime - stime);
     }
     public static int dist(int nX, int nY){
         ArrayList<Integer> arlQueue = new ArrayList<Integer>(), arlQueue2 = new ArrayList<Integer>();
-        //ArrayList<Integer> arlQueue2 = new ArrayList<Integer>();
-        //ArrayList<String> arlSeen = new ArrayList<String>();
         int arnSeen[][] = new int[8][8];
         int arnX[] = {0,0,-1,-1,-1,1,1,1}, arnY[] = {-1,1,-1,0,1,-1,0,1}, nCurX, nCurY, nNewX, nNewY, nNum = 0;
         arlQueue.add(nX);
         arlQueue.add(nY);
         arnSeen[nX][nY] = 1;
-        //arlSeen.add(nX +" " +nY);
         while(!arlQueue.isEmpty()){
             nCurX = arlQueue.get(0);
             arlQueue.remove(0);
@@ -64,7 +55,6 @@ public static int nRowEnd, nColEnd;
                         arlQueue2.add(nNewX);
                         arlQueue2.add(nNewY);
                         arnSeen[nNewX][nNewY] = 1;
-                        //arlSeen.add(nNewX +" " +nNewY);
                     }
                 }
             }
@@ -80,6 +70,6 @@ public static int nRowEnd, nColEnd;
     }
 }
 //4601690       Grondin
-//6337981       Mine                    MINE IS SLOWER WTF
+//6337981       Mine                   
 //3705989       Grondin
 //3349072       New BFS

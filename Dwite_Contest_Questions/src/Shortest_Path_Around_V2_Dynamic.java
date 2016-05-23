@@ -29,8 +29,7 @@ public static int nRow2, nCol2;
                     }else if (ars2D[j][k].equals("B")){
                         nRow2 = j;
                         nCol2 = k;
-                    }
-                    
+                    }                    
                 }
             }
             solve(arnDist, nRow, nCol);
@@ -45,18 +44,14 @@ public static int nRow2, nCol2;
             if (nRow+arnY[i]>=0 && nCol+arnX[i]>=0 && nRow+arnY[i]<8 && nCol+arnX[i]<8 && !ars2D[nRow+arnY[i]][nCol+arnX[i]].equals("#")){
                 if (arnDist[nRow+arnY[i]][nCol+arnX[i]] == -1 || arnDist[nRow+arnY[i]][nCol+arnX[i]]>arnDist[nRow][nCol]+1){
                     arnDist[nRow+arnY[i]][nCol+arnX[i]] = arnDist[nRow][nCol]+1;
-                    print2D(arnDist);
-                    System.out.println();
-                    solve(arnDist, nRow+arnY[i], nCol+arnX[i]);
-                    
+                    //print2D(arnDist);
+                    //System.out.println();
+                    solve(arnDist, nRow+arnY[i], nCol+arnX[i]);        
+                }
             }
-            //    else{
-              //      return;
-                //}
-            }
-        }
-        
+        }        
     }
+    //Debug Code
     public static void print2D(int arn2D[][]) {
         for (int i = 0; i < arn2D.length; i++) {
             for (int j = 0; j < arn2D[i].length; j++) {

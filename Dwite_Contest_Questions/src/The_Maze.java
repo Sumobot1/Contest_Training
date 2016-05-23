@@ -20,7 +20,7 @@ public class The_Maze {
             nWid = Integer.parseInt(arsLine[1]);
             arcMaze = new char[nLen][nWid];
             for (int j = 0; j < nLen; j++) {
-                arcMaze[j] = fin.nextLine().toCharArray();       //WOULD NOT READ IN CORRECTLY.  HAD TO REPASTE INPUT FILE FOR NO APPARENT REASON A MILLION FUCKING TIMES
+                arcMaze[j] = fin.nextLine().toCharArray();       
             }
             for (int l = 0; l < arcMaze.length; l++) {
                 for (int m = 0; m < arcMaze[l].length; m++) {
@@ -29,7 +29,6 @@ public class The_Maze {
                         nY = m;
                     }
                 }
-              //  System.out.println();
             }
             nDist = solvemaze(arcMaze, nX, nY);
             System.out.println(nDist);

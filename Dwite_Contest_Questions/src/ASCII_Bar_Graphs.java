@@ -7,11 +7,9 @@ public class ASCII_Bar_Graphs {
 
     public static void main(String[] args) throws IOException{
         int nNum;
-        //char arcGraph[] = {'-','-','-','-','-','|','-','-','-','-','-'};
         Scanner fin = new Scanner (new FileReader("Bargraph.txt"));
         for (int i = 0;i<5;i++){
-            char arcGraph[] = {'-','-','-','-','-','|','-','-','-','-','-'};        //TF IS WRONG WITH THIS
-            //arcGraph = {'-','-','-','-','-','|','-','-','-','-','-'};
+            char arcGraph[] = {'-','-','-','-','-','|','-','-','-','-','-'};
             nNum = fin.nextInt();
             arcGraph = show(arcGraph, nNum);
             for (int j = 0;j<arcGraph.length;j++){

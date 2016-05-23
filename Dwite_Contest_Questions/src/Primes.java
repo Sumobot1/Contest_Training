@@ -16,25 +16,11 @@ public class Primes {
             alNums.clear();
             nNum = fin.nextInt();
             System.out.println(nNum);
-           // arbNums = new boolean[nNum + 6];
-          //  arbNums[0] = true;
-          //  arbNums[1] = true;
-          //  int i = 0;
-         //   while (arnPrimes[i])
             for (int i = 2; i < nNum; i++) {
                 if (prime(i)){
                     alNums.add(i);
                     System.out.print(i +" ");
                 }
-                
-//                if (arbNums[i] == false) {
-//                    alNums.add(i);
-//                    k = i;
-//                    while ((k + i) <= arbNums.length) {
-//                        arbNums[k] = true;
-//                        k += i;
-//                    }
-//                }
             }
             System.out.println();
                         System.out.println("Done");
@@ -65,15 +51,11 @@ public class Primes {
             for (int m = 0; m < alNums.size(); m++) {
                 for (int l = 0; l < alNums.size(); l++) {
                     if (alNums.get(i) + alNums.get(l) + alNums.get(m) == nNum && alNums.get(i) >= alNums.get(m) && alNums.get(m) >= alNums.get(l)) {
-                        //System.out.println(alNums.get(i) +" " +alNums.get(l) +" " +alNums.get(m));
                         nCombos += 1;
                     }
                 }
             }
         }
-//        for (int i = 0; i < alNums.size(); i++) {
-//            System.out.print(alNums.get(i) + " ");
-//        }
         System.out.println("Combos " + nCombos);
         return nCombos;
     }

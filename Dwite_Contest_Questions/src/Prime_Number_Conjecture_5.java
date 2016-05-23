@@ -25,10 +25,6 @@ public class Prime_Number_Conjecture_5 {
                     }
                 }
             }
-//            for (int i = 0;i<arbNums.length;i++){
-            //              System.out.print(arbNums[i] +" ");      //DEBUGGING CODE - PRINT OUT ARRAY OF BOOLEANS AND BIGGEST PRIME
-            //        }
-            ///System.out.println(alNums.get(alNums.size() - 1));
             if (alNums.contains(nNum)) {
                 System.out.println("PRIME");
             } else {
@@ -41,20 +37,15 @@ public class Prime_Number_Conjecture_5 {
     public static int combo(ArrayList<Integer> alNums, int nNum) {
         int nCombos = 0, nRem;
         for (int i = 0; i < alNums.size(); i++) {
-            for (int m = 0; m < alNums.size(); m++) {       //RECURSION WOULD NOT SEEM TO WORK... USED A HYBRID OF 
+            for (int m = 0; m < alNums.size(); m++) {       
                 if (alNums.get(i) >= alNums.get(m)) {
                     nRem = alNums.get(i) + alNums.get(m);
                     if ((nNum - nRem) <= alNums.get(m) && nNum >= nRem && arbNums[nNum - nRem] == false) {
-                        //System.out.println(alNums.get(i)+" " +alNums.get(m) +" " +(nNum-nRem));
                         nCombos += 1;
                     }
                 }
             }
         }
-//        for (int i = 0; i < alNums.size(); i++) {
-//            System.out.print(alNums.get(i) + " ");
-//        }
-        //System.out.println("Combos " + nCombos);
         return nCombos;
     }
 }

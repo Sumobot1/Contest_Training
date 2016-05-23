@@ -24,23 +24,16 @@ public static int nRowEnd, nColEnd;
                         nRow = i;
                         nCol = k;
                     }
-//                    if (arsRoom[i][k].equals("B")){
-  //                      nRowEnd = i;
-    //                    nColEnd = k;
-      //              }
                 }
-                //arsRoom[i] = fin.nextLine().toCharArray();
             }
             nDist = dist(nRow, nCol);
             System.out.println(nDist);
-            //sDashes = fin.nextLine();
         }
         long etime = System.nanoTime();
         System.out.println(etime - stime);
     }
     public static int dist(int nX, int nY){
         ArrayList<Integer> arlQueue = new ArrayList<Integer>(), arlQueue2 = new ArrayList<Integer>();
-        //ArrayList<Integer> arlQueue2 = new ArrayList<Integer>();
         ArrayList<String> arlSeen = new ArrayList<String>();
         int arnX[] = {0,0,-1,-1,-1,1,1,1}, arnY[] = {-1,1,-1,0,1,-1,0,1}, nCurX, nCurY, nNewX, nNewY, nNum = 0;
         arlQueue.add(nX);
@@ -76,6 +69,3 @@ public static int nRowEnd, nColEnd;
         return -1;
     }
 }
-//4601690       Grondin
-//6337981       Mine                    MINE IS SLOWER WTF
-//3705989       Grondin

@@ -10,37 +10,19 @@ public class Prime_Factorization {
 
     public static ArrayList<Integer> alNums = new ArrayList<Integer>();
     public static String sFin = "";
-//public static boolean arbNums[];
 
     public static void main(String[] args) throws IOException {
         int nNum;
         boolean bCheck;
-//        int nDerp = (int)(Math.sqrt(2000000000));
-//        arbNums = new boolean[nDerp+1];
-//        arbNums[0] = true;
-//        arbNums[1] = true;
-//        for (int i = 0; i <= 65000; i++) {
-//            if (arbNums[i] == false) {
-//                alNums.add(i);
-//                for (int l = i; Math.abs(i * l) <= 65000; l++) {
-//                    arbNums[i * l] = true;
-//                }
-//            }
-//        }
         int nDiv;
         Scanner fin = new Scanner(new FileReader("PrimeFactorization.txt"));
         for (int i = 0; i < 5; i++) {
             sFin = "";
             nNum = fin.nextInt();
-            //System.out.println("number" + nNum);
             bCheck = isPrime(nNum);
             if (bCheck) {
-                //System.out.println("there");
                 System.out.println(nNum);
             } else {
-                //int nDerp = (int)(Math.sqrt(nNum));
-                //rec(nNum, 2);
-                //System.out.println("fuck");
                 nDiv = 2;
                 while (true) {
                     if (isPrime(nDiv)) {
@@ -58,7 +40,6 @@ public class Prime_Factorization {
                         break;
                     }
                 }
-                //sFin+= nNum;
                 System.out.println(sFin);
             }
         }

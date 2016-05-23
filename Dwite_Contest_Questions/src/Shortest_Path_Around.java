@@ -24,7 +24,6 @@ public class Shortest_Path_Around {
                         break;
                     }
                 }
-                //System.out.println();
             }
             nDist = dist(arcRoom, nX, nY);
             System.out.println(nDist);

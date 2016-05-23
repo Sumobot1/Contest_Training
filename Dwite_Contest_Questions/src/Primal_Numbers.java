@@ -11,10 +11,8 @@ public class Primal_Numbers {
         ArrayList<Integer> alPrimes = sieve(8000);        
         for (int i = 0;i<5;i++){
             nNum = fin.nextInt();           
-            nStep = alPrimes.get(nNum-1);
-            //System.out.println("Number " +nNum);           
+            nStep = alPrimes.get(nNum-1);          
             nPrimal = alPrimes.get(nStep-1);
-            //System.out.println("Step: " +nStep);
             System.out.println(nPrimal);
         }
     }
@@ -31,5 +29,5 @@ public class Primal_Numbers {
         }
         return alPrimes;
     }
-    }
+}
     

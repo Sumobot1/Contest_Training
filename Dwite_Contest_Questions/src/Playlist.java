@@ -19,14 +19,11 @@ public static int arnRat[], arnSize[], arnVals[][];
             arnSize = new int[nSongs];
             for (int j = 0;j<nSongs;j++){
                 arsLine = fin.nextLine().split(" ");
-                print(arsLine);
+               // print(arsLine);
                 arnRat[j] = Integer.parseInt(arsLine[1]);
                 arnSize[j] = Integer.parseInt(arsLine[2]);
             }
-            //arnKeep = new int[nSongs+1][nSpace];
             arnVals = new int[nSongs+1][nSpace];
-//            print(arnRat);
-//            print(arnSize);
             solve();
             System.out.println(arnVals[arnVals.length-1][arnVals[0].length-1]);
         }
@@ -38,7 +35,7 @@ public static int arnRat[], arnSize[], arnVals[][];
                 nLeave = arnVals[i-1][j];
                 if (arnSize[i-1]<=(j+1)){                   
                     nTake = arnRat[i-1];
-                    nRem = (j)-arnSize[i-1];            //J used instead of j+1 makes no sense but works...
+                    nRem = (j)-arnSize[i-1];           
                     if (nRem>0){
                         nTake = arnRat[i-1]+arnVals[i-1][nRem];
                     }
@@ -54,8 +51,9 @@ public static int arnRat[], arnSize[], arnVals[][];
                 }
             }
         }
-        print2D(arnVals);
+      //  print2D(arnVals);
     }
+    //Debug Code
     public static void print2D(int arn2D[][]) {
         for (int i = 0; i < arn2D.length; i++) {
             for (int j = 0; j < arn2D[i].length; j++) {
@@ -64,7 +62,7 @@ public static int arnRat[], arnSize[], arnVals[][];
             System.out.println();
         }
     }
-
+    //Debug Code
     public static void print(String arnthing[]) {
         for (int i = 0; i < arnthing.length; i++) {
             System.out.print(arnthing[i] + " ");

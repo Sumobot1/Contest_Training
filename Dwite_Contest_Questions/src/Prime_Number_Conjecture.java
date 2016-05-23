@@ -1,5 +1,6 @@
 /*
  http://dwite.ca/old/Problem4Dec2004.pdf
+//Slow Version...
  */
 
 import java.util.*;
@@ -43,15 +44,11 @@ public class Prime_Number_Conjecture {
             for (int m = 0; m < alNums.size(); m++) {
                 for (int l = 0; l < alNums.size(); l++) {
                     if (alNums.get(i) + alNums.get(l) + alNums.get(m) == nNum && alNums.get(i) >= alNums.get(m) && alNums.get(m) >= alNums.get(l)) {
-                        //System.out.println(alNums.get(i) +" " +alNums.get(l) +" " +alNums.get(m));
                         nCombos += 1;
                     }
                 }
             }
         }
-//        for (int i = 0; i < alNums.size(); i++) {
-//            System.out.print(alNums.get(i) + " ");
-//        }
         System.out.println("Combos " + nCombos);
         return nCombos;
     }

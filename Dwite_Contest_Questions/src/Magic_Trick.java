@@ -17,18 +17,12 @@ public class Magic_Trick {
             System.out.println(nNum);
             for (int k = 1; k <= nNum; k++) {
                 arlNums.add(k);
-      //          System.out.print(k+" ");
 
             }
-            //    System.out.println();
             arnOrder = new int[nNum];
             for (int j = 0; j < nNum; j++) {
                 arnOrder[j] = fin.nextInt();
-                //System.out.print(arnOrder[i] +" ");
             }
-      //      for (int k = 0;k<nNum;k++){
-            //        System.out.println(arnOrder[k]);
-            //  }
             sFin = order(arnOrder, arlNums);
             System.out.println(sFin);
         }
@@ -38,10 +32,6 @@ public class Magic_Trick {
         String sFin = "";
         boolean bCheck;
         int arnFin[] = new int[arnOrder.length];
-      //  arnFin[0] = arlNums.get(arlNums.size()-1-arnOrder[0]);
-        // arlNums.remove(arlNums.get(arlNums.size()-1-arnOrder[0]));
-        //      System.out.println("size" +arlNums.get(arlNums.size()-3));
-        //    System.out.println(arnOrder[1]);
         for (int i = 0; i < arnOrder.length; i++) {
             if ((arlNums.size() - 1 - arnOrder[i]) >= 0) {
                 arnFin[i] = arlNums.get(arlNums.size() - 1 - arnOrder[i]);

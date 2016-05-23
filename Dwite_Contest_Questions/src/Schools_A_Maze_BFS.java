@@ -22,8 +22,7 @@ public class Schools_A_Maze_BFS {
         long stime = System.nanoTime();
         for (int i = 0; i < 5; i++) {
             nDist = 0;
-            arcLine = fin.nextLine().toCharArray();
-            //System.out.println(arcLine[0]);               //PROGRAM WILL PRINT OUT CHARACTER ARRAY WITH NO PROBLEM... WHY            
+            arcLine = fin.nextLine().toCharArray();        
             fill(arnDists);                                 //Forgot to flood array with 0s before the first test case
             for (int j = 0; j < arcLine.length - 1; j++) {
                 if (arcLine[j] != arcLine[j + 1]) {
@@ -33,23 +32,6 @@ public class Schools_A_Maze_BFS {
                     find(arcLine[j + 1]);
                     nDist += solve(nCurr, nCurc);
                 }
-
-                //System.out.println(arcLine[j] +" " +arcLine[j+1]);
-
-                //System.out.println(nCurr +" " +nCurc +" " +nRow +" " +nCol);
-                //System.out.println(arcLine[j]);
-                //arnDists[nCurr][nCurc] = 0;
-                //System.out.println("here");
-                //print2Dint(arnDists);
-//                if (nCurr == nRow && nCurc == nCol){
-//                    nDist += 0;
-//                }
-
-                //System.out.println("lol");
-                //nDist += arnDists[nRow][nCol];
-                //System.out.println(nDist);
-                //fill(arnDists);
-                //System.out.println(nDist);
             }
             System.out.println(nDist);
         }
@@ -60,7 +42,7 @@ public class Schools_A_Maze_BFS {
     public static void find(char cLet) {
         for (int j = 0; j < arcSchool.length; j++) {
             for (int k = 0; k < arcSchool[j].length; k++) {
-                if (arcSchool[j][k] == cLet) {          //HAD THIS AS A BECAUSE IM AN IDIOT
+                if (arcSchool[j][k] == cLet) {          
                     nRow = j;
                     nCol = k;
                 }
@@ -82,8 +64,6 @@ public class Schools_A_Maze_BFS {
             nCurc = arlQueue.get(0);
             arlQueue.remove(0);
             for (int i = 0; i < 4; i++) {
-                //    nNewCol = nCurc +arnX[i];
-                //    nNewRow = nCurr + arnY[i];
                 if (!arlSeen.contains(nCurr + arnY[i] + " " + nCurc + arnX[i]) && nCurr + arnY[i] >= 0 && nCurc + arnX[i] >= 0 && nCurr + arnY[i] < arcSchool.length && nCurc + arnX[i] < arcSchool[0].length && arcSchool[nCurr + arnY[i]][nCurc + arnX[i]] != '#') {
                     if (nCurr + arnY[i] == nRow && nCurc + arnX[i] == nCol) {
                         return (nNum + 1);
@@ -102,21 +82,6 @@ public class Schools_A_Maze_BFS {
             }
         }
         return -1;
-//        for (int i = 0; i < 4; i++) {
-//            if (nCurRow + arnY[i] >= 0 && nCurCol + arnX[i] >= 0 && nCurRow + arnY[i] < arnDist.length && nCurCol + arnX[i] < arnDist[0].length && arcSchool[nCurRow + arnY[i]][nCurCol + arnX[i]] != '#') {
-//                if (arnDist[nCurRow + arnY[i]][nCurCol + arnX[i]] == -1 || arnDist[nCurRow + arnY[i]][nCurCol + arnX[i]] > arnDist[nCurRow][nCurCol] + 1) {
-//                    arnDist[nCurRow + arnY[i]][nCurCol + arnX[i]] = arnDist[nCurRow][nCurCol] + 1;
-//                    //print2D(arnDist);
-//                    //System.out.println();
-//                    solve(arnDist, nCurRow + arnY[i], nCurCol + arnX[i]);
-//
-//                }
-//                //    else{
-//                //      return;
-//                //}
-//            }
-//        }
-
     }
 
     public static void fill(int arn2D[][]) {

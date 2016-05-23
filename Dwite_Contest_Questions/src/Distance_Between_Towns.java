@@ -14,14 +14,12 @@ public class Distance_Between_Towns {
         String sAlpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         Scanner fin = new Scanner(new FileReader("distance.txt"));
         nNum = fin.nextInt();
-        //System.out.println(nNum);
         arVertex = new Vertex[nNum];
         for (int i = 0; i < nNum; i++) {
             arVertex[i] = new Vertex(Character.toString(sAlpha.charAt(i)));
-            //System.out.println(arVertex[i]);
         }
         for (int i = 0; i < nNum; i++) {
-            arcPlaces = fin.next().toCharArray();           //Check first digit as origin, second as destination.  Find correct array index, add edge
+            arcPlaces = fin.next().toCharArray();           
             System.out.println(arcPlaces[0] + " " + arcPlaces[1]);
             nDist = fin.nextInt();
             System.out.println(nDist);
@@ -31,9 +29,7 @@ public class Distance_Between_Towns {
             System.out.println(arVertex[nDestIndex]);
             arVertex[nIndex].adjacencies.add(new Edge(arVertex[nDestIndex], nDist));
             arVertex[nDestIndex].adjacencies.add(new Edge(arVertex[nIndex], nDist));
-            //arVertex[i].adjacencies.add();
         }
-        //for (int i = 0;i<arVertex.length;i++)
         while (fin.hasNext()) {
             arcPlaces = fin.next().toCharArray();
             nIndex = find(sAlpha, arcPlaces[0]);

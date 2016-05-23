@@ -10,9 +10,7 @@ public class Weak_Passwords {
         String sFin;
         Scanner fin = new Scanner (new FileReader("Hash.txt"));
         for (int i = 0;i<5;i++){
-            nNum = fin.nextInt();
-            //System.out.println(Character.getName(90));
-            
+            nNum = fin.nextInt();            
             sFin = crack(nNum);
             System.out.println(sFin);
         }
@@ -36,7 +34,7 @@ public class Weak_Passwords {
                 }
             }
         }
-        return "Fuckyou";
+        return "No Password Found";
     }
     
 }

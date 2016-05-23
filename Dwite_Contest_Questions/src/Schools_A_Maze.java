@@ -22,26 +22,17 @@ public class Schools_A_Maze {
         long stime = System.nanoTime();
         for (int i = 0; i < 5; i++) {
             nDist = 0;
-            arcLine = fin.nextLine().toCharArray();
-            //System.out.println(arcLine[0]);               //PROGRAM WILL PRINT OUT CHARACTER ARRAY WITH NO PROBLEM... WHY            
-            fill(arnDists);                                 //Forgot to flood array with 0s before the first test case
+            arcLine = fin.nextLine().toCharArray();        
+            fill(arnDists);                                 
             for (int j = 0; j < arcLine.length - 1; j++) {
                 find(arcLine[j]);
-                //System.out.println(arcLine[j] +" " +arcLine[j+1]);
                 nCurr = nRow;
                 nCurc = nCol;
                 find(arcLine[j + 1]);
-                //System.out.println(nCurr +" " +nCurc +" " +nRow +" " +nCol);
-                //System.out.println(arcLine[j]);
                 arnDists[nCurr][nCurc] = 0;
-                //System.out.println("here");
-                //print2Dint(arnDists);
                 solve(arnDists, nCurr, nCurc);
-                //System.out.println("lol");
                 nDist += arnDists[nRow][nCol];
-                //System.out.println(nDist);
                 fill(arnDists);
-                //System.out.println(nDist);
             }
             System.out.println(nDist);
         }
@@ -52,7 +43,7 @@ public class Schools_A_Maze {
     public static void find(char cLet) {
         for (int j = 0; j < arcSchool.length; j++) {
             for (int k = 0; k < arcSchool[j].length; k++) {
-                if (arcSchool[j][k] == cLet) {          //HAD THIS AS A BECAUSE IM AN IDIOT
+                if (arcSchool[j][k] == cLet) {        
                     nRow = j;
                     nCol = k;
                 }
@@ -68,14 +59,9 @@ public class Schools_A_Maze {
             if (nCurRow + arnY[i] >= 0 && nCurCol + arnX[i] >= 0 && nCurRow + arnY[i] < arnDist.length && nCurCol + arnX[i] < arnDist[0].length && arcSchool[nCurRow + arnY[i]][nCurCol + arnX[i]] != '#') {
                 if (arnDist[nCurRow + arnY[i]][nCurCol + arnX[i]] == -1 || arnDist[nCurRow + arnY[i]][nCurCol + arnX[i]] > arnDist[nCurRow][nCurCol] + 1) {
                     arnDist[nCurRow + arnY[i]][nCurCol + arnX[i]] = arnDist[nCurRow][nCurCol] + 1;
-                    //print2D(arnDist);
-                    //System.out.println();
                     solve(arnDist, nCurRow + arnY[i], nCurCol + arnX[i]);
 
                 }
-                //    else{
-                //      return;
-                //}
             }
         }
 

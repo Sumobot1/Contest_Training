@@ -10,16 +10,12 @@ public static int nCap, nSets, arnData[], arn2D[][];
         for (int i = 0;i<5;i++){
             nCap = 1440;
             nSets = fin.nextInt();
-           // System.out.println(nSets);
             arnData = new int[nSets];
             for (int j = 0;j<nSets;j++){
-                arnData[j] = fin.nextInt();     //USED I INSTEAD OF J
+                arnData[j] = fin.nextInt();     
             }
-            //print(arnData);
             arn2D = new int[nSets+1][nCap];
             solve();
-           // print2D(arn2D);
-           // System.out.println();
             System.out.println(nCap - arn2D[arn2D.length-1][arn2D[0].length-1]);
         }
     }
@@ -47,6 +43,7 @@ public static int nCap, nSets, arnData[], arn2D[][];
             }
         }
     }
+    //Debug Code
     public static void print2D(int arn2D[][]) {
         for (int i = 0; i < arn2D.length; i++) {
             for (int j = 0; j < arn2D[i].length; j++) {
@@ -55,6 +52,7 @@ public static int nCap, nSets, arnData[], arn2D[][];
             System.out.println();
         }
     }
+    //Debug Code
     public static void print(int arnthing[]) {
         for (int i = 0; i < arnthing.length; i++) {
             System.out.print(arnthing[i] + " ");
