@@ -5,16 +5,11 @@ http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=5&
 import java.util.*;
 import java.io.*;
 public class UVA_343 {
-
-//    public static int nBase1 = 1, nBase2 = 1;
     public static void main(String[] args) throws IOException{
         String sNum1, sNum2, sNew1, sNew2;
         int nNum1, nNum2, arnBases[];
-      //  boolean bCheck;
         Scanner fin = new Scanner (new FileReader("343.txt"));
         while (fin.hasNextLine()){
-      //      nBase1 = 1;
-    //        nBase2 = 1;
             sNum1 = fin.next();
             sNum2 = fin.next();
             sNew1 = tonum(sNum1);
@@ -26,12 +21,6 @@ public class UVA_343 {
             else{
                 System.out.println("nope");
             }
-   //         if (bCheck){
-     //           System.out.println(nBase1 +" " +nBase2);
-       //     }
-         //   else{
-           //     System.out.println("nope");
-            //}
         }
     }
     public static String tonum(String sNum){
@@ -67,10 +56,8 @@ public class UVA_343 {
         
     }
     public static int tobase(String sNum, int nBase){
-        //System.out.println("newcall");
         int nTot = 0, j = 0;
         for (int i = sNum.length()-1;i>=0;i--){
-            //System.out.println((double)Character.getNumericValue(sNum.charAt(i)) +" " +Math.pow(nBase,j) +" " +(double)(Character.valueOf(sNum.charAt(i)))*(Math.pow(nBase,j)));
             nTot += (double)Character.getNumericValue(sNum.charAt(i))*(Math.pow(nBase,j));
             j+=1;
         }
